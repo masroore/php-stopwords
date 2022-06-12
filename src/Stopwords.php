@@ -50,7 +50,7 @@ class Stopwords
     public function load(string|array $languages): self
     {
         if (!is_array($languages)) {
-            $languages = [$languages];
+            $languages = ($languages === '*') ? self::$languages : [$languages];
         }
 
         foreach ($languages as $lang) {
