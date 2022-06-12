@@ -48,7 +48,7 @@ if (!function_exists('word_tokenize')) {
      */
     function word_tokenize(string $s): array
     {
-        $result = preg_split('/((^\p{P}+)|(\p{P}*\s+\p{P}*)|(\p{P}+$))/u', $s, -1, PREG_SPLIT_NO_EMPTY);
+        $result = preg_split('/((^\p{P}+)|(\p{P}*\s+\p{P}*)|(\p{P}+$))/ui', $s, -1, PREG_SPLIT_NO_EMPTY);
 
         return $result !== false ? $result : [];
     }
