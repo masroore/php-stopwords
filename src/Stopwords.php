@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Kaiju\Stopwords;
 
-use InvalidArgumentException;
+use Kaiju\Stopwords\Exceptions\LanguageNotFoundException;
 
 class Stopwords
 {
@@ -27,7 +27,7 @@ class Stopwords
         $this->reset();
     }
 
-    public static function make(string $resourceDir = '', array $languages = ['english']): static
+    public static function make(string $resourceDir = '', string|array $languages = ['english']): static
     {
         return (new self($resourceDir))->load($languages);
     }
@@ -60,7 +60,7 @@ class Stopwords
             }
 
             if (!in_array($lang, self::$languages, true)) {
-                throw new InvalidArgumentException("Invalid language: $lang");
+                throw new LanguageNotFoundException("Invalid language: $lang");
             }
 
             $this->loadLanguageFile($lang);
@@ -84,7 +84,7 @@ class Stopwords
 
     public function reset(): void
     {
-        $this->stopwords = $this->languages = [];
+        $this->stopwords = self::$languages = [];
         $this->scanLanguages();
     }
 
