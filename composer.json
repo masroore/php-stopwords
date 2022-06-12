@@ -4,13 +4,10 @@
     "keywords": [
         "stopwords",
         "php",
-        "keyword",
         "analyzer",
+        "tokenize",
         "word",
-        "frequency",
-        "file",
-        "text",
-        "html"
+        "text"
     ],
     "homepage": "https://github.com/masroore/php-stopwords",
     "license": "MIT",
@@ -35,6 +32,9 @@
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
         "phpunit/phpunit": "^9.5"
+    },
+    "support": {
+        "issues": "https://github.com/masroore/php-stopwords/issues"
     },
     "autoload": {
         "psr-4": {
