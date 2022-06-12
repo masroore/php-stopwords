@@ -50,8 +50,15 @@ composer require masroore/stopwords
 ```php
 $stopwords = new Kaiju\Stopwords\Stopwords();
 
-// get an array of english stopwords
-print_r($stopwords->load('english'));
+// get the list of available languages
+print_r($stopwords->getLanguages());
+
+// load stopwords for a language
+$stopwords->load('english');
+
+// load stopwords for multiple languages
+$stopwords->load(['english', 'french']);
+
 ```
 
 ## Testing
