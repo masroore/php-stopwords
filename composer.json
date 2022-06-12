@@ -39,7 +39,10 @@
     "autoload": {
         "psr-4": {
             "Kaiju\\Stopwords\\": "src"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
