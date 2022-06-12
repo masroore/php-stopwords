@@ -1,9 +1,9 @@
 # Stopwords for PHP
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/masroore/php-stopwords.svg?style=flat-square)](https://packagist.org/packages/masroore/php-stopwords)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/masroore/stopwords.svg?style=flat-square)](https://packagist.org/packages/masroore/stopwords)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/masroore/php-stopwords/run-tests?label=tests)](https://github.com/masroore/php-stopwords/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/masroore/php-stopwords/Check%20&%20fix%20styling?label=code%20style)](https://github.com/masroore/php-stopwords/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/masroore/php-stopwords.svg?style=flat-square)](https://packagist.org/packages/masroore/php-stopwords)
+[![Total Downloads](https://img.shields.io/packagist/dt/masroore/stopwords.svg?style=flat-square)](https://packagist.org/packages/masroore/stopwords)
 
 ## Overview ##
 
