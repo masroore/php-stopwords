@@ -1,0 +1,70 @@
+{
+    "name": "masroore/stopwords",
+    "description": "Stopwords for PHP",
+    "keywords": [
+        "stopwords",
+        "php",
+        "keyword",
+        "analyzer",
+        "word",
+        "frequency",
+        "file",
+        "text",
+        "html"
+    ],
+    "homepage": "https://github.com/masroore/php-stopwords",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Masroor Ehsan",
+            "email": "masroore@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0 || ^8.1"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kaiju\\Stopwords\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kaiju\\Stopwords\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "fix": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "1.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
