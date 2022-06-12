@@ -102,7 +102,8 @@ class Stopwords
     }
 
     /**
-     * Strips stop-words and punctuation marks from string.
+     * Strip stopwords and punctuation marks from an input text.
+     * Returns an array that represents the text with the specified stopwords removed.
      *
      * @return string[]
      */
@@ -117,6 +118,14 @@ class Stopwords
         }
 
         return $stripped;
+    }
+
+    /**
+     * Strip stopwords and punctuation marks from an input text.
+     */
+    public function clean(string $s): string
+    {
+        return implode(' ', $this->strip($s));
     }
 
     private function loadLanguageFile(string $lang): void
