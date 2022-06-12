@@ -3,13 +3,15 @@
     "description": "Stopwords for PHP",
     "keywords": [
         "stopwords",
-        "stopword",
+        "stop words",
         "stop-words",
+        "stopword",
         "stop-word",
-        "stopword-list",
-        "stop-list",
+        "stop word",
+        "stopword list",
+        "stop list",
         "php",
-        "natural-language-processing",
+        "natural language processing",
         "nlp",
         "analyzer",
         "tokenize",
@@ -59,7 +61,7 @@
     },
     "scripts": {
         "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
+        "test": "vendor/bin/phpunit tests",
         "test-coverage": "vendor/bin/pest --coverage",
         "fix": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
     },
