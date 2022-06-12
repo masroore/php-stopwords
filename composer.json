@@ -3,9 +3,17 @@
     "description": "Stopwords for PHP",
     "keywords": [
         "stopwords",
+        "stopword",
+        "stop-words",
+        "stop-word",
+        "stopword-list",
+        "stop-list",
         "php",
+        "natural-language-processing",
+        "nlp",
         "analyzer",
         "tokenize",
+        "string",
         "word",
         "text"
     ],
