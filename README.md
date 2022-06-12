@@ -59,6 +59,17 @@ $stopwords->load('english');
 // load stopwords for multiple languages
 $stopwords->load(['english', 'french']);
 
+// load stopwords for all available languages
+$stopwords->load('*');
+
+// check if the given word is a stop-word
+$stopwords->isStopword('the'); // TRUE
+$stopwords->isStopword('America'); // FALSE
+
+// return a tokenized copy of the text, with stop-words and punctuation marks removed
+$text = "Good muffins cost $3.88\nin New York.  Please buy me two of them.\n\nThanks!\n";
+print_r($stopwords->strip($text));
+
 ```
 
 ## Testing
