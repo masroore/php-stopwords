@@ -73,6 +73,10 @@ $stopwords->isStopword('America'); // FALSE
 // return a tokenized copy of the text, with stop-words and punctuation marks removed
 $text = "Good muffins cost $3.88\nin New York.  Please buy me two of them.\n\nThanks!\n";
 print_r($stopwords->strip($text));
+// ["Good","muffins","cost","$3.88","New","York","Please","buy","two","Thanks"]
+
+echo $stopwords->clean($text);
+// "Good muffins cost $3.88 New York Please buy two Thanks"
 
 ```
 
