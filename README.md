@@ -7,7 +7,11 @@
 
 ## Overview ##
 
-Stopwords in multiple languages that you can easily use with your PHP programs. Currently provides stopwords for the following languages:
+Stopwords in multiple languages that you can easily use with your PHP applications.
+
+## Supported languages
+
+Currently provides stopwords for the following languages:
 
 * Arabic
 * Azerbaijani
