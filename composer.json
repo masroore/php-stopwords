@@ -1,6 +1,6 @@
 {
     "name": "masroore/stopwords",
-    "description": "Stopwords for PHP",
+    "description": "A PHP package to remove common stopwords from an input text, it covers most languages.",
     "keywords": [
         "stopwords",
         "stop words",
