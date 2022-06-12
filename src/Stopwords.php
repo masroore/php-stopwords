@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Kaiju\Stopwords;
 
 use Kaiju\Stopwords\Exceptions\LanguageNotFoundException;
+use Kaiju\Stopwords\Tokenizer\SimpleTokenizer;
+use Kaiju\Stopwords\Tokenizer\Tokenizer;
+use RuntimeException;
 
 class Stopwords
 {
@@ -18,12 +21,23 @@ class Stopwords
      */
     private array $stopwords = [];
 
-    public function __construct(private string $resourceDir = '')
+    private Tokenizer $tokenizer;
+
+    public function __construct(private string $resourceDir = '', ?Tokenizer $tokenizer = null)
     {
         if (is_blank($this->resourceDir)) {
             $this->resourceDir = __DIR__ . '/../resources/stopwords';
         }
         $this->resourceDir = normalize_path($this->resourceDir);
+
+        if (null === $tokenizer) {
+            $tokenizer = new SimpleTokenizer();
+        } elseif (!$tokenizer instanceof Tokenizer) {
+            throw new RuntimeException('Invalid tokenizer passed to Stopwords');
+        }
+
+        $this->tokenizer = $tokenizer;
+
         $this->reset();
     }
 
@@ -98,7 +112,7 @@ class Stopwords
 
     public function isStopword(string $s): bool
     {
-        return in_array(normalize_text($s), $this->stopwords, true);
+        return in_array($this->tokenizer->normalize($s), $this->stopwords, true);
     }
 
     /**
@@ -111,7 +125,7 @@ class Stopwords
     {
         /** @var string[] $stripped */
         $stripped = [];
-        foreach (word_tokenize($s) as $word) {
+        foreach ($this->tokenizer->tokenize($s) as $word) {
             if (!is_blank($word) && !$this->isStopword($word)) {
                 $stripped[] = $word;
             }
@@ -133,7 +147,7 @@ class Stopwords
         $path = "{$this->resourceDir}/{$lang}.txt";
         $words = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         if ($words !== false) {
-            $words = array_map(static fn (string $s): string => normalize_text($s), $words);
+            $words = array_map(fn (string $s): string => $this->tokenizer->normalize($s), $words);
             $words = array_unique(array_filter($words));
             foreach ($words as $word) {
                 if (!in_array($word, $this->stopwords, true)) {
